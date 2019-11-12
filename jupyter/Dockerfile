@@ -28,7 +28,9 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 RUN update-locale LANGUAGE=ja_JP:ja LANG=ja_JP.UTF-8
 
 # Install Python 3 packages
+RUN conda config --show-sources
 RUN conda install --quiet --yes \
+    'python=3.7.*' \
     'conda-build' \
     'readline' \
     'mysql-connector-python' \
@@ -51,7 +53,7 @@ RUN conda install --quiet --yes \
     'featuretools' \
     'deap' \
     'lime' \
-    && conda clean -tipsy
+    && conda clean --all
 
 USER $NB_USER
 
