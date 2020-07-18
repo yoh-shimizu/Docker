@@ -1,7 +1,7 @@
 FROM pytorch/pytorch:latest
 
 RUN apt-get -y update
-RUN apt-get install -y nodejs npm sudo vim wget curl ssh git
+RUN apt-get install -y npm sudo vim wget curl ssh
 
 # Install required libraries
 RUN conda config --add channels pytorch \
