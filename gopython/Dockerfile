@@ -1,6 +1,4 @@
-From ubuntu:focal
-
-MAINTAINER digineko<digineko.dood@gmail.com>
+FROM ubuntu:focal
 
 EXPOSE 22
 
