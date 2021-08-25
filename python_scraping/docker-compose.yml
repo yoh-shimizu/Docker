@@ -11,6 +11,9 @@ services:
         image: selenium/node-chrome-debug
         depends_on:
           - selenium-hub
+        volumes:
+          - /dev/shm:/dev/shm
+        shm_size: "2gb"
         environment:
           - HUB_PORT_4444_TCP_ADDR=selenium-hub 
           - HUB_PORT_4444_TCP_PORT=4444
